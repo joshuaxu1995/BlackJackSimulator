@@ -20,7 +20,7 @@ public class TableParser {
     	//the file used in the example uses '\n' as the line separator sequence.
     	//the line separator sequence is defined here to ensure systems such as MacOS and Windows
     	//are able to process this file correctly (MacOS uses '\r'; and Windows uses '\r\n').
-    	settings.getFormat().setLineSeparator("r");
+    	settings.getFormat().setLineSeparator("\n");
 
     	// creates a CSV parser
     	CsvParser parser = new CsvParser(settings);
@@ -38,7 +38,9 @@ public class TableParser {
     
     public String tableLookUp(List<String[]> table, int val1, int val2){
     	String [] heading = table.get(0);
+//    	System.out.println("what is tables size" + table.size());
     	for (String [] row: table){
+//    		System.out.println("Val 1: " + val1 + " and row[0]: "+ row[0]);
     		if (row[0].equals(Integer.toString(val1))){
     			int colNum = -1;
     			for (int i = 0; i < heading.length; i++){

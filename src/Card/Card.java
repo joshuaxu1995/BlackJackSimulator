@@ -4,7 +4,6 @@ package Card;
 public class Card {
 	public int myValue;
 	public Suit mySuit;
-	
 
 	public Card(Suit suit, int i) {
 		// TODO Auto-generated constructor stub

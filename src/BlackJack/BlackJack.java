@@ -11,48 +11,64 @@ import java.util.ArrayList;
 public class BlackJack {
 
 	
-	private ArrayList<SmartPlayerController> players;
+	private ArrayList<BlackJackPlayer> players;
 	private Deck deck1;
-
+	private BlackJackDealer dealer;
+	public static final double BET = 5;
+	public static final double SCORE = 100;
 	
-	public BlackJack(int numPlayers){
-		players = new ArrayList<SmartPlayerController>();
+	public BlackJack(int numPlayers, int numHands){
+		initialize();
+		for (int i =0; i < numPlayers; i++){
+			BlackJackPlayer p = new BlackJackPlayer(i+1, SCORE, BET);
+			players.add(p);
+		}
+		playHands(numHands);
+	}
+
+	public void initialize(){
+		players = new ArrayList<BlackJackPlayer>();
 		deck1 = new Deck(4);
-		SoftDealerController d = new SoftDealerController(deck1.dealTop(), deck1.dealTop());
+		dealer = new BlackJackDealer();
+	}
+
+	private void playHands(int numHands){
+		for (int i =0 ; i < numHands; i++){
+			playSingleHand();
+		}
+	}
+
+	private void playSingleHand(){
+		if (deck1.deckPenetration() > 0.25){
+			deck1.resetDeck();
+		}
 		boolean allBusted = false;
-		for (int i =1; i < numPlayers; i++){
-			SmartPlayerController p = new SmartPlayerController(10,i+1, deck1.dealTop(), deck1.dealTop());
-			p.makeDecision(d.getDealer().getVisibleCard(), deck1);
-			if (!p.getPlayer().busted()){
+		dealer.establishHand(deck1.dealTop(), deck1.dealTop());
+		SmartPlayerController ai = new SmartPlayerController();
+		SoftDealerController d = new SoftDealerController(dealer);
+		for (BlackJackPlayer p: players){
+			p.establishHand(deck1.dealTop(), deck1.dealTop());
+			ai.makeDecision(p,dealer.getVisibleCard(), deck1);
+			if (!ai.getPlayer().busted()){
 				allBusted = true;
 			}
-			players.add(p);
 		}
 		if (allBusted){
 			d.makeDecision(deck1);
 		}
-		
-	}	
+		WinConditions wc = new WinConditions(players, dealer);
+	}
 	
 	public BlackJack(int numPlayers, Card playerCard1, Card playerCard2, Card dealerCard){
-		players = new ArrayList<SmartPlayerController>();
-		deck1 = new Deck(4);
-		SmartPlayerController me = new SmartPlayerController(10, 1, playerCard1, playerCard2);
-		System.out.println(me);
-		SoftDealerController d = new SoftDealerController(dealerCard, deck1.dealTop());
-		System.out.println(d);
-		players.add(me);
+//		BlackJackPlayer me = new BlackJackPlayer(1, SCORE, BET, playerCard1, playerCard2);
+//		System.out.println(me);
+//		BlackJackDealer dealer = new BlackJackDealer(dealerCard, deck1.dealTop());
+//		SoftDealerController d = new SoftDealerController(dealer);
+//		System.out.println(d);
+//		players.add(me);
 		deck1.findAndRemoveCard(playerCard1);
 		deck1.findAndRemoveCard(playerCard2);
 		deck1.findAndRemoveCard(dealerCard);
-		for (int i =1; i < numPlayers; i++){
-			SmartPlayerController p = new SmartPlayerController(10, i+1, deck1.dealTop(), deck1.dealTop());
-			p.makeDecision(dealerCard, deck1);
-//			System.out.println(p);
-			players.add(p);
-		}
-//		System.out.println(deck1);
-//		players.add(d);
 	}
 	
 	public void dealCards(){

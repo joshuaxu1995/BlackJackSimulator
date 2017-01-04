@@ -1,9 +1,7 @@
 package BlackJackAI;
 
-import Card.*;
 import Deck.*;
 import BlackJack.*;
-import Tools.*;
 
 import java.util.List;
 
@@ -21,15 +19,15 @@ public class SoftDealerController {
 		}
 	}
 	
-	public SoftDealerController( Card c1, Card c2){
-		myDealer = new BlackJackDealer(c1, c2);
+	public SoftDealerController(BlackJackDealer d){
+		myDealer = d;
 		establishChart();
 	}
 
 	private void establishChart() {
 		// TODO Auto-generated method stub
-		TableParser tp = new TableParser();
-		optimalStrategy = tp.createTable("/BlackJackAI/HardTable.csv");
+//		TableParser tp = new TableParser();
+//		optimalStrategy = tp.createTable("/BlackJackAI/HardTable.csv");
 //		System.out.println(optimalStrategy);
 //		printTable(optimalStrategy);
 //		for (int i = 4; i <= 21; i++){
@@ -44,9 +42,10 @@ public class SoftDealerController {
 //	}
 	
 	public void makeDecision(DeckPoller deckPoll){
-		if (myDealer.getScore() < 17){
+		if (myDealer.getSum() < 17){
 			myDealer.hit(deckPoll.dealTop());
 		}
+		System.out.println("final hand of dealer is " + myDealer.toString());
 	}
 
 	public BlackJackDealer getDealer() {

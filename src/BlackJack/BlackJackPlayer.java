@@ -5,17 +5,24 @@ import Deck.*;
 import BlackJack.*;
 import Tools.*;
 
-public class BlackJackPlayer {
+public class BlackJackPlayer implements PlayerChanger {
 	
 	private int myPlayerNum; 
 	protected Hand myHand;
-	protected int playerLimit;
+	private double myScore;
+	private double myBet;
 	
-	public BlackJackPlayer(int playerNum, Card card1, Card card2){
-		myHand = new Hand(card1, card2);
+	public BlackJackPlayer(int playerNum, double initScore, double initBet){
+		myBet = initBet;
+		myScore = initScore;
 		myPlayerNum = playerNum;
-		playerLimit = 16;
 	}
+
+	public void establishHand(Card c1, Card c2){
+		myHand = new Hand(c1, c2);
+	}
+
+	public void alterScore(double score){ myScore += score;}
 	
 	public void hit(Card addCard){
 		myHand.addCard(addCard);
@@ -24,11 +31,19 @@ public class BlackJackPlayer {
 	public void doubleHand(Card addCard){
 		hit(addCard);
 	}
-	
+
+	public double myBet(){
+		return myBet;
+	}
+
 	public void splitHand(){
 		
 	}
-	
+
+	public double getScore(){
+		return myScore;
+	}
+
 	public void stay(){
 		return;
 	}
@@ -49,10 +64,15 @@ public class BlackJackPlayer {
 		return myHand.blackJack();
 	}
 	
-	public int getScore(){
+	public int getSum(){
 		return myHand.getHandInfo().mySum;
 	}
-	
+
+	@Override
+	public int getID() {
+		return myPlayerNum;
+	}
+
 	public HType getType(){
 		return myHand.getHandInfo().myType;
 	}

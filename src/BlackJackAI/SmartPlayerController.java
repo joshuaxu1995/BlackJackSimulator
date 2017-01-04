@@ -8,7 +8,7 @@ import java.util.List;
 
 public class SmartPlayerController{
 	
-	private int myOriginalBet;
+//	private int myOriginalBet;
 	private List<String[]> optimalStrategy;
 	private BlackJackPlayer myPlayer;
 	
@@ -21,9 +21,8 @@ public class SmartPlayerController{
 		}
 	}
 	
-	public SmartPlayerController(int originalBet, int playerNum, Card c1, Card c2){
-		myOriginalBet = originalBet;
-		myPlayer = new BlackJackPlayer(playerNum, c1, c2);
+	public SmartPlayerController(){
+//		myOriginalBet = originalBet;
 //		establishChart();
 	}
 
@@ -37,7 +36,7 @@ public class SmartPlayerController{
 			optimalStrategy = tp.createTable("/BlackJackAI/SoftTable.csv");
 		}
 //		System.out.println(optimalStrategy);
-		printTable(optimalStrategy);
+//		printTable(optimalStrategy);
 //		for (int i = 4; i <= 21; i++){
 //			for (int j = 1 ; j < 10; j++ ){
 //				System.out.println("i: " + i + " j: " + j + " " + tp.tableLookUp(optimalStrategy, i, j));
@@ -49,20 +48,22 @@ public class SmartPlayerController{
 //		return myPlayer.busted();
 //	}
 	
-	public void makeDecision(Card shownDealerCard, DeckPoller deckPoll){
+	public void makeDecision(BlackJackPlayer p, Card shownDealerCard, DeckPoller deckPoll){
+		myPlayer = p;
 		TableParser tp = new TableParser();
-//		System.out.println("What is the score here " + myPlayer.getScore() + " " + shownDealerCard.myValue);
+//		System.out.println("What is the score here " + myPlayer.getSum() + " " + shownDealerCard.myValue);
 		establishChart(myPlayer.getType());
-		System.out.println("Score " + myPlayer.getScore() + " BlackJack.BlackJackDealer: " + shownDealerCard.myValue);
-		String decision = tp.tableLookUp(optimalStrategy, myPlayer.getScore(), shownDealerCard.myValue);
-//		System.out.println("What is the decision here" + decision);
+		System.out.println("Score " + myPlayer.getSum() + " BlackJack.BlackJackDealer: " + shownDealerCard.myValue);
+		System.out.println("True value is " + BlackJackCardConverter.getTrueValue(shownDealerCard));
+		String decision = tp.tableLookUp(optimalStrategy, myPlayer.getSum(), BlackJackCardConverter.getTrueValue(shownDealerCard));
+		System.out.println("What is the decision here" + decision);
 		if (decision.charAt(0) =='S'){
 		}
 		else if (decision.charAt(0) == 'H'){
 			while (decision.equals("H")){
 				myPlayer.hit(deckPoll.dealTop());
 				establishChart(myPlayer.getType());
-				decision = tp.tableLookUp(optimalStrategy,myPlayer.getScore(), shownDealerCard.myValue);
+				decision = tp.tableLookUp(optimalStrategy,myPlayer.getSum(), BlackJackCardConverter.getTrueValue(shownDealerCard));
 			}
 		}
 		else if (decision.charAt(0) == 'D'){

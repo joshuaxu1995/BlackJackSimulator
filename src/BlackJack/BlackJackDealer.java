@@ -5,8 +5,8 @@ import Card.Card;
 
 public class BlackJackDealer extends BlackJackPlayer {
 
-	public BlackJackDealer(Card cardHidden, Card card2Seen) {
-		super(0, cardHidden, card2Seen);
+	public BlackJackDealer() {
+		super(0, 0, 0);
 		// TODO Auto-generated constructor stub
 	}
 	

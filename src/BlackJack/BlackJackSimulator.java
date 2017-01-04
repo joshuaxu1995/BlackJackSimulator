@@ -12,7 +12,7 @@ public class BlackJackSimulator {
 //		System.out.println(c1.equals(c2));
 //		Card.Card c3 = new Card.Card(Card.Card.Suit.SPADES, 1);
 //		BlackJack.BlackJack bj = new BlackJack.BlackJack(5, c1, c2, c3);
-		BlackJack bj = new BlackJack(5);
+		BlackJack bj = new BlackJack(5, 10);
 		bj.dealCards();
 	}
 
