@@ -1,3 +1,11 @@
+package BlackJack;
+
+import Card.*;
+import Deck.*;
+import BlackJack.*;
+import Tools.*;
+import BlackJackAI.*;
+
 import java.util.ArrayList;
 
 public class BlackJack {
@@ -49,7 +57,7 @@ public class BlackJack {
 	
 	public void dealCards(){
 //		System.out.println("DEALING CARDS BELOW");
-//		for (Player p: players){
+//		for (BlackJack.BlackJackPlayer p: players){
 //			if (!p.limReached() && !p.busted()){
 //				p.hit(deck1.dealTop());
 //			}

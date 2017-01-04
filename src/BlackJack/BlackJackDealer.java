@@ -1,7 +1,11 @@
+package BlackJack;
 
-public class Dealer extends Player {
+import BlackJack.BlackJackPlayer;
+import Card.Card;
 
-	public Dealer(Card cardHidden, Card card2Seen) {
+public class BlackJackDealer extends BlackJackPlayer {
+
+	public BlackJackDealer(Card cardHidden, Card card2Seen) {
 		super(0, cardHidden, card2Seen);
 		// TODO Auto-generated constructor stub
 	}
@@ -9,7 +13,7 @@ public class Dealer extends Player {
 	@Override
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
-		sb.append("Dealer has ");
+		sb.append("BlackJack.BlackJackDealer has ");
 		sb.append(myHand);
 		return sb.toString();
 	}

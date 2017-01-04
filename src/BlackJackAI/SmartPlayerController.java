@@ -1,10 +1,16 @@
+package BlackJackAI;
+import Card.*;
+import Deck.*;
+import BlackJack.*;
+import Tools.*;
+
 import java.util.List;
 
 public class SmartPlayerController{
 	
 	private int myOriginalBet;
 	private List<String[]> optimalStrategy;
-	private Player myPlayer;
+	private BlackJackPlayer myPlayer;
 	
 	public void printTable(List<String[]> table){
 		for (String [] sTable: table){
@@ -17,7 +23,7 @@ public class SmartPlayerController{
 	
 	public SmartPlayerController(int originalBet, int playerNum, Card c1, Card c2){
 		myOriginalBet = originalBet;
-		myPlayer = new Player(playerNum, c1, c2);
+		myPlayer = new BlackJackPlayer(playerNum, c1, c2);
 //		establishChart();
 	}
 
@@ -25,10 +31,10 @@ public class SmartPlayerController{
 		// TODO Auto-generated method stub
 		TableParser tp = new TableParser();
 		if (type == HType.HARD){
-			optimalStrategy = tp.createTable("HardTable.csv");	
+			optimalStrategy = tp.createTable("/BlackJackAI/HardTable.csv");
 		}
 		else{
-			optimalStrategy = tp.createTable("SoftTable.csv");	
+			optimalStrategy = tp.createTable("/BlackJackAI/SoftTable.csv");
 		}
 //		System.out.println(optimalStrategy);
 		printTable(optimalStrategy);
@@ -47,7 +53,7 @@ public class SmartPlayerController{
 		TableParser tp = new TableParser();
 //		System.out.println("What is the score here " + myPlayer.getScore() + " " + shownDealerCard.myValue);
 		establishChart(myPlayer.getType());
-		System.out.println("Score " + myPlayer.getScore() + " Dealer: " + shownDealerCard.myValue);
+		System.out.println("Score " + myPlayer.getScore() + " BlackJack.BlackJackDealer: " + shownDealerCard.myValue);
 		String decision = tp.tableLookUp(optimalStrategy, myPlayer.getScore(), shownDealerCard.myValue);
 //		System.out.println("What is the decision here" + decision);
 		if (decision.charAt(0) =='S'){
@@ -68,7 +74,7 @@ public class SmartPlayerController{
 		return;
 	}
 
-	public Player getPlayer() {
+	public BlackJackPlayer getPlayer() {
 		// TODO Auto-generated method stub
 		return myPlayer;
 	}

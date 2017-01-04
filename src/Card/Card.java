@@ -1,7 +1,9 @@
+package Card;
+
 
 public class Card {
-	int myValue;
-	Suit mySuit;
+	public int myValue;
+	public Suit mySuit;
 	
 
 	public Card(Suit suit, int i) {

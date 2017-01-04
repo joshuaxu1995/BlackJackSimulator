@@ -1,3 +1,5 @@
+import BlackJack.BlackJackPlayer;
+import BlackJack.BlackJackDealer;
 
 public class WinConditions {
 	
@@ -5,7 +7,7 @@ public class WinConditions {
 		
 	}
 	
-	public double won(Player p, Dealer d){
+	public double won(BlackJackPlayer p, BlackJackDealer d){
 		if (p.busted()){
 			return 0;
 		}

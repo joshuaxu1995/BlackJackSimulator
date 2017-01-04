@@ -1,4 +1,7 @@
-import java.util.ArrayList;
+package Deck;
+import Card.*;
+
+
 import java.util.Collections;
 import java.util.Stack;
 
@@ -31,7 +34,7 @@ public class Deck implements DeckPoller {
 	}
 	
 	public void findAndRemoveCard(Card c){
-//		System.out.println("Card is " + c);
+//		System.out.println("Card.Card is " + c);
 		boolean b = myCards.remove(c);
 //		System.out.println("mycards size" + myCards.size() + "and removed was " + b);
 		return;

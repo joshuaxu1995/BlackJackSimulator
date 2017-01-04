@@ -1,11 +1,17 @@
+package BlackJack;
 
-public class Player {
+import Card.*;
+import Deck.*;
+import BlackJack.*;
+import Tools.*;
+
+public class BlackJackPlayer {
 	
 	private int myPlayerNum; 
 	protected Hand myHand;
 	protected int playerLimit;
 	
-	public Player(int playerNum, Card card1, Card card2){
+	public BlackJackPlayer(int playerNum, Card card1, Card card2){
 		myHand = new Hand(card1, card2);
 		myPlayerNum = playerNum;
 		playerLimit = 16;
@@ -54,7 +60,7 @@ public class Player {
 	@Override
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
-		sb.append("Player " + myPlayerNum + " has ");
+		sb.append("BlackJack.BlackJackPlayer " + myPlayerNum + " has ");
 		sb.append(myHand);
 		return sb.toString();
 	}

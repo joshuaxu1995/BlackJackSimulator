@@ -1,3 +1,11 @@
+package Card;
+
+import Card.*;
+import Deck.*;
+import BlackJack.*;
+import Tools.*;
+import BlackJackAI.*;
+
 import java.util.ArrayList;
 
 public class Hand {

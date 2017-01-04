@@ -1,9 +1,16 @@
+package BlackJackAI;
+
+import Card.*;
+import Deck.*;
+import BlackJack.*;
+import Tools.*;
+
 import java.util.List;
 
 public class SoftDealerController {
 
 	private List<String[]> optimalStrategy;
-	private Dealer myDealer;
+	private BlackJackDealer myDealer;
 	
 	public void printTable(List<String[]> table){
 		for (String [] sTable: table){
@@ -15,14 +22,15 @@ public class SoftDealerController {
 	}
 	
 	public SoftDealerController( Card c1, Card c2){
-		myDealer = new Dealer(c1, c2);
+		myDealer = new BlackJackDealer(c1, c2);
 		establishChart();
 	}
 
 	private void establishChart() {
 		// TODO Auto-generated method stub
 		TableParser tp = new TableParser();
-		optimalStrategy = tp.createTable("HardTable.csv");
+		optimalStrategy = tp.createTable("/BlackJackAI/HardTable.csv");
+//		System.out.println(optimalStrategy);
 //		printTable(optimalStrategy);
 //		for (int i = 4; i <= 21; i++){
 //			for (int j = 1 ; j < 10; j++ ){
@@ -41,7 +49,7 @@ public class SoftDealerController {
 		}
 	}
 
-	public Dealer getDealer() {
+	public BlackJackDealer getDealer() {
 		// TODO Auto-generated method stub
 		return myDealer;
 	}

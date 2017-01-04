@@ -1,7 +1,8 @@
+package BlackJack;
 
 public class HandInfo {
-	HType myType;
-	int mySum;
+	public HType myType;
+	public int mySum;
 	
 	public HandInfo(HType h, int sum){
 		myType = h;

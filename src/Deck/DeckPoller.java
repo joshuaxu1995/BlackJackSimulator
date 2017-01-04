@@ -1,3 +1,6 @@
+package Deck;
+
+import Card.Card;
 
 public interface DeckPoller {
 

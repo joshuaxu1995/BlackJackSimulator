@@ -1,3 +1,5 @@
+package Tools;
+
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;
@@ -18,7 +20,7 @@ public class TableParser {
     	//the file used in the example uses '\n' as the line separator sequence.
     	//the line separator sequence is defined here to ensure systems such as MacOS and Windows
     	//are able to process this file correctly (MacOS uses '\r'; and Windows uses '\r\n').
-    	settings.getFormat().setLineSeparator("\n");
+    	settings.getFormat().setLineSeparator("r");
 
     	// creates a CSV parser
     	CsvParser parser = new CsvParser(settings);
