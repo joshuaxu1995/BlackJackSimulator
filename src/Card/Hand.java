@@ -1,11 +1,7 @@
 package Card;
 
-import Card.*;
-import Deck.*;
+import Card.Card;
 import BlackJack.*;
-import Tools.*;
-import BlackJackAI.*;
-
 import java.util.ArrayList;
 
 public class Hand {
@@ -39,16 +35,26 @@ public class Hand {
 			}
 		}
 		for (int i = 0 ; i < aceCount; i++){
-			if (total < 10){
+			if (total <= 10){
 				total+=11;
-				h = HType.SOFT;
 			}
 			else{
 				total+=1;
+				h = HType.SOFT;
 			}
 		}
 		HandInfo handinfo = new HandInfo(h,total);
 		return handinfo;
+	}
+
+	public boolean sameValue(){
+		int value = cards.get(0).myValue;
+		for (int i = 1; i < cards.size(); i++){
+			if (cards.get(i).myValue != value){
+				return false;
+			}
+		}
+		return true;
 	}
 	
 	public boolean blackJack(){

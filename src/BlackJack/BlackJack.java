@@ -2,8 +2,6 @@ package BlackJack;
 
 import Card.*;
 import Deck.*;
-import BlackJack.*;
-import Tools.*;
 import BlackJackAI.*;
 
 import java.util.ArrayList;
@@ -18,18 +16,18 @@ public class BlackJack {
 	public static final double SCORE = 100;
 	
 	public BlackJack(int numPlayers, int numHands){
-		initialize();
+		initialize(numPlayers);
+		playHands(numHands);
+	}
+
+	public void initialize(int numPlayers){
+		players = new ArrayList<BlackJackPlayer>();
+		deck1 = new Deck(4);
+		dealer = new BlackJackDealer();
 		for (int i =0; i < numPlayers; i++){
 			BlackJackPlayer p = new BlackJackPlayer(i+1, SCORE, BET);
 			players.add(p);
 		}
-		playHands(numHands);
-	}
-
-	public void initialize(){
-		players = new ArrayList<BlackJackPlayer>();
-		deck1 = new Deck(4);
-		dealer = new BlackJackDealer();
 	}
 
 	private void playHands(int numHands){
@@ -49,7 +47,7 @@ public class BlackJack {
 		for (BlackJackPlayer p: players){
 			p.establishHand(deck1.dealTop(), deck1.dealTop());
 			ai.makeDecision(p,dealer.getVisibleCard(), deck1);
-			if (!ai.getPlayer().busted()){
+			if (!p.busted()){
 				allBusted = true;
 			}
 		}

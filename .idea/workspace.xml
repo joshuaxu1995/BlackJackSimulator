@@ -2,30 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28a87635-f348-4eb9-8377-0b3e500a5911" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BlackJack/PlayerChanger.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Card/BlackJackCardConverter.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/BlackJackSimulator/BlackJackCard.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/BlackJackSimulator/WinConditions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/BlackJackCard.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/WinConditions.java" afterPath="$PROJECT_DIR$/src/BlackJack/WinConditions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BlackJackSimulator/BlackJack/BlackJackPlayer.class" afterPath="$PROJECT_DIR$/out/production/BlackJackSimulator/BlackJack/BlackJackPlayer.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BlackJackAI/Splits.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BlackJackSimulator/BlackJack/BlackJack.class" afterPath="$PROJECT_DIR$/out/production/BlackJackSimulator/BlackJack/BlackJack.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BlackJackSimulator/BlackJack/BlackJackSimulator.class" afterPath="$PROJECT_DIR$/out/production/BlackJackSimulator/BlackJack/BlackJackSimulator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BlackJackSimulator/BlackJackAI/SmartPlayerController.class" afterPath="$PROJECT_DIR$/out/production/BlackJackSimulator/BlackJackAI/SmartPlayerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BlackJackSimulator/Card/Card.class" afterPath="$PROJECT_DIR$/out/production/BlackJackSimulator/Card/Card.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BlackJackSimulator/Card/Hand.class" afterPath="$PROJECT_DIR$/out/production/BlackJackSimulator/Card/Hand.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BlackJackSimulator/Tools/TableParser.class" afterPath="$PROJECT_DIR$/out/production/BlackJackSimulator/Tools/TableParser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BlackJackSimulator/BlackJackAI/HardTable.csv" afterPath="$PROJECT_DIR$/out/production/BlackJackSimulator/BlackJackAI/HardTable.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BlackJackSimulator/BlackJackAI/SoftTable.csv" afterPath="$PROJECT_DIR$/out/production/BlackJackSimulator/BlackJackAI/SoftTable.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BlackJack/BlackJack.java" afterPath="$PROJECT_DIR$/src/BlackJack/BlackJack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BlackJack/BlackJackDealer.java" afterPath="$PROJECT_DIR$/src/BlackJack/BlackJackDealer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BlackJack/BlackJackPlayer.java" afterPath="$PROJECT_DIR$/src/BlackJack/BlackJackPlayer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BlackJack/BlackJackSimulator.java" afterPath="$PROJECT_DIR$/src/BlackJack/BlackJackSimulator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BlackJackAI/HardTable.csv" afterPath="$PROJECT_DIR$/src/BlackJackAI/HardTable.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BlackJackAI/SmartPlayerController.java" afterPath="$PROJECT_DIR$/src/BlackJackAI/SmartPlayerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BlackJackAI/SoftDealerController.java" afterPath="$PROJECT_DIR$/src/BlackJackAI/SoftDealerController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BlackJackAI/SoftTable.csv" afterPath="$PROJECT_DIR$/src/BlackJackAI/SoftTable.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Card/Card.java" afterPath="$PROJECT_DIR$/src/Card/Card.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Card/Hand.java" afterPath="$PROJECT_DIR$/src/Card/Hand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Deck/Deck.java" afterPath="$PROJECT_DIR$/src/Deck/Deck.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tools/TableParser.java" afterPath="$PROJECT_DIR$/src/Tools/TableParser.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -42,65 +34,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="WinConditions.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BlackJack/WinConditions.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerChanger.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BlackJack/PlayerChanger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Deck.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Deck/Deck.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1010#1011#0" expanded="true" />
-                <element signature="e#1053#1054#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlackJackPlayer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BlackJack/BlackJackPlayer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="14" column="74" lean-forward="false" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#437#438#0" expanded="true" />
-                <element signature="e#469#470#0" expanded="true" />
-                <element signature="e#677#678#0" expanded="true" />
-                <element signature="e#696#697#0" expanded="true" />
-                <element signature="e#757#758#0" expanded="true" />
-                <element signature="e#778#779#0" expanded="true" />
-                <element signature="e#1133#1134#0" expanded="true" />
-                <element signature="e#1158#1159#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SmartPlayerController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SmartPlayerController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BlackJackAI/SmartPlayerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="166">
+              <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,17 +50,17 @@
         <entry file="file://$PROJECT_DIR$/src/BlackJack/BlackJackSimulator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+              <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlackJack.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BlackJack.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BlackJack/BlackJack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="720">
+              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,14 +68,64 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlackJackDealer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BlackJack/BlackJackDealer.java">
+      <file leaf-file-name="Hand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Card/Hand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+            <state relative-caret-position="675">
+              <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BlackJack/HType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HandInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BlackJack/HandInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HardTable.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BlackJackAI/HardTable.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlackJackPlayer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BlackJack/BlackJackPlayer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="43" column="21" lean-forward="false" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Splits.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BlackJackAI/Splits.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -154,16 +142,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HandInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BlackJack/HandInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -172,6 +150,14 @@
         <option value="Interface" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>myPlayer</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>p</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -197,26 +183,28 @@
         <option value="$PROJECT_DIR$/src/Card/Card.java" />
         <option value="$PROJECT_DIR$/src/Card/BlackJackCard.java" />
         <option value="$PROJECT_DIR$/src/Card/BlackJackCardConverter.java" />
-        <option value="$PROJECT_DIR$/src/BlackJackAI/HardTable.csv" />
-        <option value="$PROJECT_DIR$/src/BlackJackAI/SoftTable.csv" />
-        <option value="$PROJECT_DIR$/src/Tools/TableParser.java" />
         <option value="$PROJECT_DIR$/src/WinConditions.java" />
-        <option value="$PROJECT_DIR$/src/Card/Hand.java" />
         <option value="$PROJECT_DIR$/src/BlackJackAI/SoftDealerController.java" />
-        <option value="$PROJECT_DIR$/src/BlackJackAI/SmartPlayerController.java" />
         <option value="$PROJECT_DIR$/src/BlackJack/PlayerChanger.java" />
         <option value="$PROJECT_DIR$/src/BlackJack/WinConditions.java" />
-        <option value="$PROJECT_DIR$/src/BlackJack/BlackJackPlayer.java" />
         <option value="$PROJECT_DIR$/src/Deck/Deck.java" />
-        <option value="$PROJECT_DIR$/src/BlackJack/BlackJackSimulator.java" />
         <option value="$PROJECT_DIR$/src/BlackJack/BlackJackDealer.java" />
+        <option value="$PROJECT_DIR$/src/BlackJackAI/SoftTable.csv" />
+        <option value="$PROJECT_DIR$/src/BlackJackAI/HardTable.csv" />
         <option value="$PROJECT_DIR$/src/BlackJack/BlackJack.java" />
+        <option value="$PROJECT_DIR$/src/BlackJack/BlackJackSimulator.java" />
+        <option value="$PROJECT_DIR$/src/BlackJackAI/SmartPlayerController.java" />
+        <option value="$PROJECT_DIR$/src/Tools/TableParser.java" />
+        <option value="$PROJECT_DIR$/src/BlackJackAI/Splits.csv" />
+        <option value="$PROJECT_DIR$/src/Card/Hand.java" />
+        <option value="$PROJECT_DIR$/src/BlackJack/BlackJackPlayer.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="38" />
     <option name="y" value="23" />
-    <option name="width" value="1260" />
+    <option name="width" value="1230" />
     <option name="height" value="677" />
   </component>
   <component name="ProjectView">
@@ -272,10 +260,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tools" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -358,6 +342,9 @@
     </panes>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/BlackJackAI" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/BlackJackAI" />
       <recent name="$PROJECT_DIR$/src/Tools" />
@@ -606,7 +593,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1260" height="677" extended-state="0" />
+    <frame x="38" y="23" width="1230" height="677" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -618,13 +605,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40625" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25609756" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -739,22 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BlackJackAI/SoftTable.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BlackJackAI/HardTable.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Deck/DeckPoller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -776,52 +747,6 @@
         <state relative-caret-position="118">
           <caret line="657" column="0" lean-forward="false" selection-start-line="657" selection-start-column="0" selection-end-line="657" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Card/Hand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="43" column="31" lean-forward="false" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tools/TableParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="35" lean-forward="true" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BlackJack/HType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BlackJack/HandInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BlackJackAI/SoftDealerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="47" column="77" lean-forward="false" selection-start-line="47" selection-start-column="77" selection-end-line="47" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -853,35 +778,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BlackJack/BlackJackPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/BlackJackAI/SoftTable.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="14" column="74" lean-forward="false" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#437#438#0" expanded="true" />
-            <element signature="e#469#470#0" expanded="true" />
-            <element signature="e#677#678#0" expanded="true" />
-            <element signature="e#696#697#0" expanded="true" />
-            <element signature="e#757#758#0" expanded="true" />
-            <element signature="e#778#779#0" expanded="true" />
-            <element signature="e#1133#1134#0" expanded="true" />
-            <element signature="e#1158#1159#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BlackJack/BlackJackSimulator.java">
+    <entry file="file://$PROJECT_DIR$/src/Tools/TableParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="198">
+          <caret line="50" column="68" lean-forward="false" selection-start-line="50" selection-start-column="68" selection-end-line="50" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BlackJack/BlackJackDealer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="-36">
           <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -889,10 +806,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BlackJackAI/SmartPlayerController.java">
+    <entry file="file://$PROJECT_DIR$/src/BlackJackAI/Splits.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="195">
+          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Card/Hand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -901,8 +826,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BlackJack/BlackJack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="720">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BlackJack/HType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BlackJack/HandInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BlackJackAI/HardTable.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BlackJack/BlackJackPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="43" column="21" lean-forward="false" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BlackJackAI/SoftDealerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="47" column="77" lean-forward="false" selection-start-line="47" selection-start-column="77" selection-end-line="47" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BlackJack/BlackJackSimulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BlackJackAI/SmartPlayerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -10,7 +10,6 @@ public class SmartPlayerController{
 	
 //	private int myOriginalBet;
 	private List<String[]> optimalStrategy;
-	private BlackJackPlayer myPlayer;
 	
 	public void printTable(List<String[]> table){
 		for (String [] sTable: table){
@@ -43,43 +42,44 @@ public class SmartPlayerController{
 //			}
 //		}
 	}
-	
-//	public boolean busted(){
-//		return myPlayer.busted();
-//	}
-	
+
 	public void makeDecision(BlackJackPlayer p, Card shownDealerCard, DeckPoller deckPoll){
-		myPlayer = p;
 		TableParser tp = new TableParser();
-//		System.out.println("What is the score here " + myPlayer.getSum() + " " + shownDealerCard.myValue);
-		establishChart(myPlayer.getType());
-		System.out.println("Score " + myPlayer.getSum() + " BlackJack.BlackJackDealer: " + shownDealerCard.myValue);
+//		System.out.println("What is the score here " + p.getSum() + " " + shownDealerCard.myValue);
+		establishChart(p.getType());
+		System.out.println("Score " + p.getSum() + " BlackJack.BlackJackDealer: " + shownDealerCard.myValue);
 		System.out.println("True value is " + BlackJackCardConverter.getTrueValue(shownDealerCard));
-		String decision = tp.tableLookUp(optimalStrategy, myPlayer.getSum(), BlackJackCardConverter.getTrueValue(shownDealerCard));
+		String decision = tp.tableLookUp(optimalStrategy, p.getSum(), BlackJackCardConverter.getTrueValue(shownDealerCard));
+		System.out.println("What is the hand here " + p);
 		System.out.println("What is the decision here" + decision);
-		if (decision.charAt(0) =='S'){
-		}
-		else if (decision.charAt(0) == 'H'){
-			while (decision.equals("H")){
-				myPlayer.hit(deckPoll.dealTop());
-				establishChart(myPlayer.getType());
-				decision = tp.tableLookUp(optimalStrategy,myPlayer.getSum(), BlackJackCardConverter.getTrueValue(shownDealerCard));
+		int count = 0;
+		while (count < 2) {
+			if (decision.charAt(count) == 'S') {
+				break;
+			} else if (decision.charAt(count) == 'H') {
+				while (decision.equals("H")) {
+					p.hit(deckPoll.dealTop());
+					establishChart(p.getType());
+					decision = tp.tableLookUp(optimalStrategy, p.getSum(), BlackJackCardConverter.getTrueValue(shownDealerCard));
+				}
+				break;
+			} else if (decision.charAt(count) == 'D') {
+				if (!p.canSpecial()){
+					count++;
+				}
+				else{
+					p.doubleHand(deckPoll.dealTop());
+					break;
+				}
+			}
+			else if (decision.charAt(count) == 'R'){
+				break;
 			}
 		}
-		else if (decision.charAt(0) == 'D'){
-			myPlayer.doubleHand(deckPoll.dealTop());
-		}
-		else if (decision.charAt(0) == 'R'){
-		}
-		System.out.println("final hand of " + myPlayer);
+		System.out.println("final hand of " + p);
 		return;
 	}
 
-	public BlackJackPlayer getPlayer() {
-		// TODO Auto-generated method stub
-		return myPlayer;
-	}
-	
 	
 	
 	

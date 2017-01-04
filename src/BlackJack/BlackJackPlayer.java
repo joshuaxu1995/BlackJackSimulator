@@ -1,9 +1,6 @@
 package BlackJack;
 
 import Card.*;
-import Deck.*;
-import BlackJack.*;
-import Tools.*;
 
 public class BlackJackPlayer implements PlayerChanger {
 	
@@ -36,8 +33,15 @@ public class BlackJackPlayer implements PlayerChanger {
 		return myBet;
 	}
 
-	public void splitHand(){
+	public void splitHand(Card c1, Card c2){
 		
+	}
+
+	public boolean canSplit(){
+		if (canSpecial() && myHand.sameValue()){
+			return true;
+		}
+		return false;
 	}
 
 	public double getScore(){
@@ -56,9 +60,7 @@ public class BlackJackPlayer implements PlayerChanger {
 		return myHand.busted();
 	}
 	
-	public void surrender(){
-		
-	}
+	public void surrender(){}
 	
 	public boolean blackJack(){
 		return myHand.blackJack();

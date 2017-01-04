@@ -48,6 +48,7 @@ public class TableParser {
     					colNum = i;
     				}
     			}
+    			System.out.println(row[colNum] + "is the decision");
     			return row[colNum];
     		}
     	}
