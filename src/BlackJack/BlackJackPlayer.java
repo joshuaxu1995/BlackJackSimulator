@@ -2,43 +2,58 @@ package BlackJack;
 
 import Card.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BlackJackPlayer implements PlayerChanger {
 	
 	private int myPlayerNum; 
-	protected Hand myHand;
+	protected List<Hand> myHands;
 	private double myScore;
+	private double myBaseBet;
 	private double myBet;
 	
 	public BlackJackPlayer(int playerNum, double initScore, double initBet){
-		myBet = initBet;
+		myBaseBet = initBet;
 		myScore = initScore;
 		myPlayerNum = playerNum;
+		myHands = new ArrayList<Hand>();
 	}
 
 	public void establishHand(Card c1, Card c2){
-		myHand = new Hand(c1, c2);
+		myHands.add(new Hand(c1, c2));
 	}
 
 	public void alterScore(double score){ myScore += score;}
 	
-	public void hit(Card addCard){
-		myHand.addCard(addCard);
+	public void hit(int handNum, Card addCard){
+		myHands.get(handNum).addCard(addCard);
 	}
 	
-	public void doubleHand(Card addCard){
-		hit(addCard);
+	public void doubleHand(int handNum, Card addCard){
+		hit(handNum, addCard);
 	}
 
-	public double myBet(){
+	public void resetHands(){
+		myHands.clear();
+	}
+
+	public double getMyBaseBet(){
 		return myBet;
 	}
 
-	public void splitHand(Card c1, Card c2){
-		
+	public void splitHand(int handNum, Card c1, Card c2){
+		Hand h= myHands.get(handNum);
+		ArrayList<Card> c = h.getCards();
+		Hand h1 = new Hand(c1, c.get(0));
+		Hand h2 = new Hand(c2, c.get(1));
+		myHands.remove(h);
+		myHands.add(h1);
+		myHands.add(h2);
 	}
 
-	public boolean canSplit(){
-		if (canSpecial() && myHand.sameValue()){
+	public boolean canSplit(int handNum){
+		if (canSpecial(0) && myHands.get(handNum).sameValue()){
 			return true;
 		}
 		return false;
@@ -48,26 +63,35 @@ public class BlackJackPlayer implements PlayerChanger {
 		return myScore;
 	}
 
+	@Override
+	public List<Integer> getScores() {
+		List<Integer> newList = new ArrayList<Integer>();
+		for (int i = 0; i < myHands.size(); i++){
+			newList.add(getSum(i));
+		}
+		return newList;
+	}
+
 	public void stay(){
 		return;
 	}
 	
-	public boolean canSpecial(){
-		return myHand.handSize() == 2;
+	public boolean canSpecial(int handNum){
+		return myHands.get(handNum).handSize() == 2;
 	}
 	
-	public boolean busted(){
-		return myHand.busted();
+	public boolean busted(int handNum){
+		return myHands.get(handNum).busted();
 	}
 	
 	public void surrender(){}
 	
-	public boolean blackJack(){
-		return myHand.blackJack();
+	public boolean blackJack(int handNum){
+		return myHands.get(handNum).blackJack();
 	}
 	
-	public int getSum(){
-		return myHand.getHandInfo().mySum;
+	public int getSum(int handNum){
+		return myHands.get(handNum).getHandInfo().mySum;
 	}
 
 	@Override
@@ -75,17 +99,20 @@ public class BlackJackPlayer implements PlayerChanger {
 		return myPlayerNum;
 	}
 
-	public HType getType(){
-		return myHand.getHandInfo().myType;
+	public HType getType(int handNum){
+		return myHands.get(handNum).getHandInfo().myType;
 	}
 	
 	@Override
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
 		sb.append("BlackJack.BlackJackPlayer " + myPlayerNum + " has ");
-		sb.append(myHand);
+		sb.append(myHands);
 		return sb.toString();
 	}
-	
-	
+
+
+	public void alterBet(double multiplier) {
+		myBet = multiplier * myBaseBet;
+	}
 }

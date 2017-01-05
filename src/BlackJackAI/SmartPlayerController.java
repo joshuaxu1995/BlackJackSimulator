@@ -43,32 +43,52 @@ public class SmartPlayerController{
 //		}
 	}
 
+
+
+	private boolean decideSplit(BlackJackPlayer p, Card shownDealerCard){
+		TableParser tp = new TableParser();
+		List<String[]> table = tp.createTable("/BlackJackAI/Splits.csv");
+		String chartVal = tp.tableLookUp(table, p.getSum(0)/2, BlackJackCardConverter.getTrueValue(shownDealerCard));
+		if (p.canSplit(0) && chartVal.equals("Y")){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+
 	public void makeDecision(BlackJackPlayer p, Card shownDealerCard, DeckPoller deckPoll){
 		TableParser tp = new TableParser();
 //		System.out.println("What is the score here " + p.getSum() + " " + shownDealerCard.myValue);
-		establishChart(p.getType());
-		System.out.println("Score " + p.getSum() + " BlackJack.BlackJackDealer: " + shownDealerCard.myValue);
+		establishChart(p.getType(0));
+		System.out.println("Score " + p.getSum(0) + " BlackJack.BlackJackDealer: " + shownDealerCard.myValue);
 		System.out.println("True value is " + BlackJackCardConverter.getTrueValue(shownDealerCard));
-		String decision = tp.tableLookUp(optimalStrategy, p.getSum(), BlackJackCardConverter.getTrueValue(shownDealerCard));
+		String decision = tp.tableLookUp(optimalStrategy, p.getSum(0), BlackJackCardConverter.getTrueValue(shownDealerCard));
 		System.out.println("What is the hand here " + p);
 		System.out.println("What is the decision here" + decision);
+		if (decideSplit(p,shownDealerCard)){
+			split();
+		}
+
 		int count = 0;
 		while (count < 2) {
 			if (decision.charAt(count) == 'S') {
 				break;
 			} else if (decision.charAt(count) == 'H') {
 				while (decision.equals("H")) {
-					p.hit(deckPoll.dealTop());
-					establishChart(p.getType());
-					decision = tp.tableLookUp(optimalStrategy, p.getSum(), BlackJackCardConverter.getTrueValue(shownDealerCard));
+					p.hit(0,deckPoll.dealTop());
+					establishChart(p.getType(0));
+					decision = tp.tableLookUp(optimalStrategy, p.getSum(0), BlackJackCardConverter.getTrueValue(shownDealerCard));
 				}
 				break;
 			} else if (decision.charAt(count) == 'D') {
-				if (!p.canSpecial()){
+				if (!p.canSpecial(0)){
 					count++;
+					p.alterBet(2d);
 				}
 				else{
-					p.doubleHand(deckPoll.dealTop());
+					p.doubleHand(0,deckPoll.dealTop());
 					break;
 				}
 			}
@@ -80,7 +100,12 @@ public class SmartPlayerController{
 		return;
 	}
 
-	
+	private void split() {
+	}
+
+	private void playHand(){
+
+	}
 	
 	
 	

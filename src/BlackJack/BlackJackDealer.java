@@ -1,6 +1,5 @@
 package BlackJack;
 
-import BlackJack.BlackJackPlayer;
 import Card.Card;
 
 public class BlackJackDealer extends BlackJackPlayer {
@@ -14,12 +13,12 @@ public class BlackJackDealer extends BlackJackPlayer {
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
 		sb.append("BlackJack.BlackJackDealer has ");
-		sb.append(myHand);
+		sb.append(myHands);
 		return sb.toString();
 	}
 	
 	public Card getVisibleCard(){
-		return myHand.getFirst();
+		return myHands.get(0).getFirst();
 	}
 	
 

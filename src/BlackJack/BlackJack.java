@@ -25,7 +25,7 @@ public class BlackJack {
 		deck1 = new Deck(4);
 		dealer = new BlackJackDealer();
 		for (int i =0; i < numPlayers; i++){
-			BlackJackPlayer p = new BlackJackPlayer(i+1, SCORE, BET);
+			BlackJackPlayer p = new BlackJackPlayer(i+1, SCORE,BET);
 			players.add(p);
 		}
 	}
@@ -47,7 +47,7 @@ public class BlackJack {
 		for (BlackJackPlayer p: players){
 			p.establishHand(deck1.dealTop(), deck1.dealTop());
 			ai.makeDecision(p,dealer.getVisibleCard(), deck1);
-			if (!p.busted()){
+			if (!p.busted(0)){
 				allBusted = true;
 			}
 		}

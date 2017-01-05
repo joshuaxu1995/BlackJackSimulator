@@ -56,6 +56,10 @@ public class Hand {
 		}
 		return true;
 	}
+
+	public ArrayList<Card> getCards(){
+		return cards;
+	}
 	
 	public boolean blackJack(){
 		return (cards.size() == 2 && getHandInfo().mySum == 21);

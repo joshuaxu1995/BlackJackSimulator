@@ -42,8 +42,8 @@ public class SoftDealerController {
 //	}
 	
 	public void makeDecision(DeckPoller deckPoll){
-		if (myDealer.getSum() < 17){
-			myDealer.hit(deckPoll.dealTop());
+		if (myDealer.getSum(0) < 17){
+			myDealer.hit(0,deckPoll.dealTop());
 		}
 		System.out.println("final hand of dealer is " + myDealer.toString());
 	}
