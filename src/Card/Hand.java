@@ -37,10 +37,10 @@ public class Hand {
 		for (int i = 0 ; i < aceCount; i++){
 			if (total <= 10){
 				total+=11;
+				h = HType.SOFT;
 			}
 			else{
 				total+=1;
-				h = HType.SOFT;
 			}
 		}
 		HandInfo handinfo = new HandInfo(h,total);

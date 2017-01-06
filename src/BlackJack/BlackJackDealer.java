@@ -18,8 +18,8 @@ public class BlackJackDealer extends BlackJackPlayer {
 	}
 	
 	public Card getVisibleCard(){
-		return myHands.get(0).getFirst();
+		return myHands.peek().getFirst();
 	}
-	
+
 
 }

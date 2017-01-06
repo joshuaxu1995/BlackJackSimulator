@@ -34,9 +34,13 @@ public class BlackJack {
 		for (int i =0 ; i < numHands; i++){
 			playSingleHand();
 		}
+		for (BlackJackPlayer bjp: players){
+			System.out.println("Player has score of " + bjp.getScore());
+		}
 	}
 
 	private void playSingleHand(){
+		dealer.resetHands();
 		if (deck1.deckPenetration() > 0.25){
 			deck1.resetDeck();
 		}
@@ -47,14 +51,18 @@ public class BlackJack {
 		for (BlackJackPlayer p: players){
 			p.establishHand(deck1.dealTop(), deck1.dealTop());
 			ai.makeDecision(p,dealer.getVisibleCard(), deck1);
-			if (!p.busted(0)){
-				allBusted = true;
-			}
+//			if (!p.busted()){
+//				allBusted = true;
+//			}
 		}
-		if (allBusted){
+//		if (allBusted){
 			d.makeDecision(deck1);
-		}
+//		}
+		dealer.finishHand();
 		WinConditions wc = new WinConditions(players, dealer);
+		for (BlackJackPlayer bjp: players){
+			bjp.resetHands();
+		}
 	}
 	
 	public BlackJack(int numPlayers, Card playerCard1, Card playerCard2, Card dealerCard){

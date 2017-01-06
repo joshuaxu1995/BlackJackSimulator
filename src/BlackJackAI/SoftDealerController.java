@@ -42,10 +42,10 @@ public class SoftDealerController {
 //	}
 	
 	public void makeDecision(DeckPoller deckPoll){
-		if (myDealer.getSum(0) < 17){
-			myDealer.hit(0,deckPoll.dealTop());
+		while (myDealer.getCurrentSum() < 17){
+			myDealer.hit(deckPoll.dealTop());
 		}
-		System.out.println("final hand of dealer is " + myDealer.toString());
+//		System.out.println("final hand of dealer is " + myDealer.toString());
 	}
 
 	public BlackJackDealer getDealer() {

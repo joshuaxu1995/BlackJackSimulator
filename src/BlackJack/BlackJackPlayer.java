@@ -3,95 +3,123 @@ package BlackJack;
 import Card.*;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class BlackJackPlayer implements PlayerChanger {
 	
 	private int myPlayerNum; 
-	protected List<Hand> myHands;
+	protected Queue<Hand> myHands;
+	private List<Hand> processedHands;
 	private double myScore;
 	private double myBaseBet;
 	private double myBet;
+	private boolean surrendered;
 	
 	public BlackJackPlayer(int playerNum, double initScore, double initBet){
 		myBaseBet = initBet;
 		myScore = initScore;
 		myPlayerNum = playerNum;
-		myHands = new ArrayList<Hand>();
+		myHands = new LinkedList<Hand>();
+		processedHands = new ArrayList<Hand>();
 	}
 
 	public void establishHand(Card c1, Card c2){
-		myHands.add(new Hand(c1, c2));
+		myHands.offer(new Hand(c1, c2));
+		myBet = myBaseBet;
+		surrendered = false;
 	}
 
 	public void alterScore(double score){ myScore += score;}
 	
-	public void hit(int handNum, Card addCard){
-		myHands.get(handNum).addCard(addCard);
+	public void hit(Card addCard){
+		myHands.peek().addCard(addCard);
 	}
 	
-	public void doubleHand(int handNum, Card addCard){
-		hit(handNum, addCard);
+	public void doubleHand(Card addCard){
+		hit(addCard);
+		myBet = myBet*2;
+	}
+
+	public void surrender(){
+		myBet = 1/2* myBet;
+		surrendered = true;
+	}
+
+	public HType getCurrentType(){
+		return myHands.peek().getHandInfo().myType;
+	}
+
+	public int getCurrentSum(){
+		return myHands.peek().getHandInfo().mySum;
+	}
+
+	public void splitHand( Card c1, Card c2){
+		Hand h= myHands.poll();
+		ArrayList<Card> c = h.getCards();
+		Hand h1 = new Hand(c1, c.get(0));
+		Hand h2 = new Hand(c2, c.get(1));
+		myHands.offer(h1);
+		myHands.offer(h2);
+	}
+
+	public int splitVal(){
+		if (canSpecial() && myHands.peek().sameValue()){
+			return myHands.peek().getCards().get(0).myValue;
+		}
+		return -1;
 	}
 
 	public void resetHands(){
 		myHands.clear();
+		processedHands.clear();
 	}
 
-	public double getMyBaseBet(){
+	public double getMyBet(){
 		return myBet;
 	}
 
-	public void splitHand(int handNum, Card c1, Card c2){
-		Hand h= myHands.get(handNum);
-		ArrayList<Card> c = h.getCards();
-		Hand h1 = new Hand(c1, c.get(0));
-		Hand h2 = new Hand(c2, c.get(1));
-		myHands.remove(h);
-		myHands.add(h1);
-		myHands.add(h2);
-	}
-
-	public boolean canSplit(int handNum){
-		if (canSpecial(0) && myHands.get(handNum).sameValue()){
-			return true;
-		}
-		return false;
+	public void finishHand(){
+		Hand h = myHands.poll();
+		processedHands.add(h);
 	}
 
 	public double getScore(){
 		return myScore;
 	}
 
-	@Override
-	public List<Integer> getScores() {
-		List<Integer> newList = new ArrayList<Integer>();
-		for (int i = 0; i < myHands.size(); i++){
-			newList.add(getSum(i));
-		}
-		return newList;
-	}
-
 	public void stay(){
 		return;
 	}
 	
-	public boolean canSpecial(int handNum){
-		return myHands.get(handNum).handSize() == 2;
+	public boolean canSpecial(){
+		return myHands.peek().handSize() == 2;
 	}
-	
+
+	public boolean queueEmpty(){
+		return myHands.isEmpty();
+	}
+
+	public boolean surrendered(int handNum){
+		return surrendered;
+	}
+
 	public boolean busted(int handNum){
-		return myHands.get(handNum).busted();
+		return processedHands.get(handNum).busted();
+	}
+
+	public List<Hand> getHands() {
+		return processedHands;
 	}
 	
-	public void surrender(){}
-	
-	public boolean blackJack(int handNum){
-		return myHands.get(handNum).blackJack();
+	public boolean isBlackJack(int handNum){
+		return processedHands.get(handNum).blackJack();
 	}
-	
+
+
 	public int getSum(int handNum){
-		return myHands.get(handNum).getHandInfo().mySum;
+		return processedHands.get(handNum).getHandInfo().mySum;
 	}
 
 	@Override
@@ -99,9 +127,6 @@ public class BlackJackPlayer implements PlayerChanger {
 		return myPlayerNum;
 	}
 
-	public HType getType(int handNum){
-		return myHands.get(handNum).getHandInfo().myType;
-	}
 	
 	@Override
 	public String toString(){
@@ -111,8 +136,4 @@ public class BlackJackPlayer implements PlayerChanger {
 		return sb.toString();
 	}
 
-
-	public void alterBet(double multiplier) {
-		myBet = multiplier * myBaseBet;
-	}
 }
